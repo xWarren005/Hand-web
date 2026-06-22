@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Hệ Thống Nhận Diện Ngôn Ngữ Ký Hiệu Tay</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#002109",
+                        "on-tertiary": "#3f2e00",
+                        "inverse-surface": "#dae2fd",
+                        "secondary": "#ffb3ad",
+                        "on-secondary-fixed-variant": "#930013",
+                        "surface-tint": "#4ae176",
+                        "outline-variant": "#3d4a3d",
+                        "on-primary-container": "#004b1e",
+                        "surface-container-highest": "#2d3449",
+                        "on-background": "#dae2fd",
+                        "on-surface-variant": "#bccbb9",
+                        "secondary-fixed": "#ffdad7",
+                        "primary": "#4be277",
+                        "on-primary-fixed-variant": "#005321",
+                        "tertiary-container": "#d7a400",
+                        "on-tertiary-fixed": "#251a00",
+                        "tertiary-fixed": "#ffdf9a",
+                        "primary-fixed-dim": "#4ae176",
+                        "error-container": "#93000a",
+                        "surface-container": "#171f33",
+                        "on-secondary": "#68000a",
+                        "surface-variant": "#2d3449",
+                        "primary-fixed": "#6bff8f",
+                        "inverse-primary": "#006e2f",
+                        "surface-dim": "#0b1326",
+                        "on-tertiary-fixed-variant": "#5a4300",
+                        "surface-bright": "#31394d",
+                        "on-primary": "#003915",
+                        "on-secondary-container": "#ffaea8",
+                        "primary-container": "#22c55e",
+                        "error": "#ffb4ab",
+                        "on-error": "#690005",
+                        "tertiary": "#f7bf1e",
+                        "tertiary-fixed-dim": "#f7be1d",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#a40217",
+                        "surface-container-low": "#131b2e",
+                        "surface-container-high": "#222a3d",
+                        "on-secondary-fixed": "#410004",
+                        "outline": "#869585",
+                        "surface": "#0b1326",
+                        "background": "#0b1326",
+                        "secondary-fixed-dim": "#ffb3ad",
+                        "on-surface": "#dae2fd",
+                        "inverse-on-surface": "#283044",
+                        "surface-container-lowest": "#060e20",
+                        "on-tertiary-container": "#523d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "stack-lg": "32px",
+                        "margin-page": "32px",
+                        "stack-md": "16px",
+                        "panel-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen overflow-hidden flex flex-col antialiased relative">
+    <div class="bg-grid"></div>
+
+    <header class="bg-surface-container/60 backdrop-blur-md border-b border-outline-variant/40 flex justify-between items-center w-full px-gutter py-4 docked full-width top-0 z-50 flat no shadows shrink-0 relative">
+        <div class="flex items-center gap-4">
+            <button class="text-on-surface hover:bg-surface-container-highest/60 transition-colors p-2 rounded-full active:scale-95 duration-150">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">front_hand</span>
+                <div>
+                    <h1 class="text-headline-md font-headline-md font-bold text-on-surface m-0 leading-tight">Nhận Diện Ngôn Ngữ Ký Hiệu Tay</h1>
+                    <p class="text-body-md font-body-md text-on-surface-variant m-0 leading-tight">Thực hiện các cử chỉ tay để hiển thị chữ cái</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center gap-2">
+            <div class="ml-4 pl-4 border-l border-outline-variant/40">
+                <img alt="User profile avatar" class="w-10 h-10 rounded-full border-2 border-primary/80 glow-green object-cover hover:scale-105 transition-transform duration-200 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8KTsHSiJszngd-EZbBSBAgrYFQQNUov720g10fS_cUDVoCkemDumrKuoS-elXkfLc9wOVThskDvKaCio2Lw3FFglciYWOY4GUFZFzwrzIRGcZy-PudY4EVmk26P5zkMc3Mgu3daTcMvQEWsQw8jt-odqucaaiEvtxjPRzn44oF6O5wgFuSh8Hw5sens0nC5WtOuiZJna1_tPGTSD-y5dcOub0zIN0knLL0-pDUaq9jnUqv9_6BcSRg6YRV85EVnKSXtEQtMmGxME" />
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-1 overflow-hidden relative z-10">
+        <nav class="bg-surface-container-low/40 backdrop-blur-md border-r border-outline-variant/30 flex flex-col h-full py-panel-padding w-64 shrink-0 overflow-y-auto hidden md:flex z-40 flat no shadows">
+            <div class="px-gutter mb-8 flex items-center gap-3">
+                <div class="w-10 h-10 bg-primary-container/80 rounded-lg flex items-center justify-center shrink-0 shadow-md">
+                    <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">front_hand</span>
+                </div>
+                <div>
+                    <h2 class="text-label-md font-bold text-on-surface m-0 leading-tight">Hệ Thống</h2>
+                    <span class="text-label-sm font-label-sm text-primary font-semibold">V1.0 Stable</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-1.5 flex-1">
+                <a class="sidebar-active rounded-lg mx-2 flex items-center gap-3 px-4 py-3 transition-all duration-200" href="#">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                    <span class="text-label-md font-bold">Bảng Điều Khiển</span>
+                </a>
+            </div>
+            <div class="px-gutter mt-auto pt-6 border-t border-outline-variant/30">
+                <button id="sidebar-trigger-btn" class="w-full btn-premium bg-primary-container hover:bg-primary text-on-primary-container py-3 px-4 rounded-lg text-label-md font-bold flex justify-center items-center gap-2 mb-4 shadow-md active:scale-95 duration-150">
+                    <span class="material-symbols-outlined text-[20px]">videocam</span>
+                    Bắt Đầu Camera
+                </button>
+            </div>
+        </nav>
+
+        <main class="flex-1 flex flex-col lg:flex-row p-gutter gap-gutter overflow-y-auto">
+            <div class="flex-[3] flex flex-col gap-gutter min-w-0">
+                <div class="glass-panel rounded-xl overflow-hidden flex flex-col min-h-[600px] flex-1 relative shadow-lg">
+                    <div class="p-4 border-b border-outline-variant/40 flex justify-between items-center bg-surface-container-highest/40 backdrop-blur-sm z-10">
+                        <div class="flex items-center gap-2">
+                            <span id="camera-pulse-dot" class="w-2.5 h-2.5 rounded-full bg-error glow-red animate-pulse"></span>
+                            <span id="camera-title" class="text-label-md font-bold text-on-surface">Camera (Video Stream)</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-on-surface-variant">
+                            <span id="fps-label" class="text-label-sm font-semibold text-primary/80">0 FPS</span>
+                        </div>
+                    </div>
+                    <div class="flex-1 relative bg-slate-950 flex items-center justify-center overflow-hidden">
+                        <div id="camera-feed-bg" class="absolute inset-0 bg-[#0e1626] flex items-center justify-center transition-all duration-300 overflow-hidden">
+                            <video id="video-element" autoplay playsinline class="w-full h-full object-contain hidden"></video>
+                            <canvas id="canvas-element" class="hidden"></canvas>
+                            <span id="camera-placeholder-icon" class="material-symbols-outlined text-[64px] text-on-surface-variant/30 select-none">videocam</span>
+                        </div>
+
+                        <div id="camera-status-container" class="absolute bottom-4 left-4 bg-slate-900/90 backdrop-blur-md border border-outline-variant/60 rounded-lg px-4 py-2.5 flex items-center gap-3.5 shadow-lg transition-all duration-300">
+                            <span id="camera-status-dot" class="w-3 h-3 rounded-full bg-error glow-red animate-pulse"></span>
+                            <span id="camera-status-text" class="text-label-sm font-bold text-error tracking-wide">HỆ THỐNG ĐÃ TẠM DỪNG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel rounded-xl p-panel-padding flex flex-col justify-between min-h-[180px]">
+                    <h3 class="text-label-md font-bold text-on-surface-variant mb-3">Chữ cái được nhận diện:</h3>
+                    <div class="flex-1 flex items-stretch justify-center w-full gap-4">
+                        <div id="recognized-letter-box" class="text-headline-xl font-headline-xl text-primary text-glow bg-surface-lowest/40 rounded-xl border border-outline-variant/60 flex-1 flex items-center justify-center font-mono font-bold select-all tracking-wider">
+                            ?
+                        </div>
+                        <button id="confirm-btn" class="btn-premium bg-primary-container hover:bg-primary text-on-primary-container px-8 rounded-xl text-headline-md font-bold transition-all flex flex-col items-center justify-center gap-2 shadow-lg hover:shadow-primary/20 active:scale-95 duration-150">
+                            <span class="material-symbols-outlined text-3xl">check_circle</span>
+                            <span>Xác nhận</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full flex-[2] lg:min-w-[400px] shrink-0 flex flex-col gap-gutter">
+                <div class="glass-panel rounded-xl p-panel-padding flex flex-col gap-4 shadow-lg">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="material-symbols-outlined text-on-surface-variant">tune</span>
+                        <h3 class="text-headline-md font-bold text-on-surface m-0 text-lg">Điều Khiển Camera</h3>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button id="start-btn" class="btn-premium bg-primary-container hover:bg-primary text-on-primary-container py-3 px-4 rounded-lg text-label-md font-bold transition-all active:scale-95 duration-200 flex justify-center items-center gap-2 shadow-md hover:shadow-primary/10">
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                            Bắt Đầu
+                        </button>
+                        <button id="stop-btn" class="btn-premium bg-error-container hover:bg-error hover:text-on-error py-3 px-4 rounded-lg text-label-md font-bold transition-all active:scale-95 duration-200 flex justify-center items-center gap-2 shadow-md hover:shadow-error/10">
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">stop</span>
+                            Dừng
+                        </button>
+                    </div>
+                </div>
+
+                <div class="glass-panel rounded-xl flex flex-col min-h-[250px] shadow-lg">
+                    <div class="p-4 border-b border-outline-variant/40 bg-surface-container-highest/40 backdrop-blur-sm flex items-center gap-2">
+                        <span class="material-symbols-outlined text-on-surface-variant">format_list_bulleted</span>
+                        <h3 class="text-headline-md font-bold text-on-surface m-0 text-lg">Bảng chữ cái tiếng Việt</h3>
+                    </div>
+                    <div class="flex-1 overflow-y-auto p-4">
+                        <div id="vietnamese-alphabet-list" class="flex flex-col gap-3">
+                            <p class="text-on-surface-variant text-sm italic">Nhận diện và xác nhận để hiển thị chữ cái tại đây.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel rounded-xl p-panel-padding flex flex-col gap-4 shadow-lg">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">keyboard</span>
+                        <h3 class="text-label-md font-bold text-on-surface m-0">Văn bản đã tạo:</h3>
+                    </div>
+                    
+                    <div class="bg-surface-lowest/50 border border-outline-variant/60 rounded-lg p-4 min-h-[120px] relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent pointer-events-none"></div>
+                        <div class="flex flex-wrap items-end w-full gap-y-1 mb-10">
+                            <span id="output-text" class="text-headline-md font-bold text-primary tracking-[0.12em] text-glow font-mono break-all"></span>
+                            <span id="output-caret" class="w-[3px] h-8 bg-primary ml-1 animate-pulse shadow-[0_0_8px_#4be277] shrink-0"></span>
+                        </div>
+
+                        <div class="absolute bottom-2 right-2 flex gap-2">
+                            <button id="speak-text-btn" class="text-on-surface-variant hover:text-primary hover:bg-surface-container-highest/60 p-2 rounded-lg transition-all active:scale-90 flex items-center justify-center bg-surface-container" title="Đọc văn bản">
+                                <span class="material-symbols-outlined text-[20px]">volume_up</span>
+                            </button>
+                            <button id="copy-text-btn" class="text-on-surface-variant hover:text-primary hover:bg-surface-container-highest/60 p-2 rounded-lg transition-all active:scale-90 flex items-center justify-center bg-surface-container" title="Sao chép văn bản">
+                                <span class="material-symbols-outlined text-[20px]">content_copy</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-4 gap-2 mt-2">
+                        <button id="backspace-btn" class="col-span-1 bg-surface-container/40 hover:bg-surface-container border border-outline-variant/50 hover:border-outline-variant text-on-surface py-2 rounded-lg text-label-sm font-bold transition-all flex flex-col items-center justify-center gap-1 shadow-sm">
+                            <span class="material-symbols-outlined text-[18px]">backspace</span>
+                            <span class="text-[10px]">Xóa Ký Tự</span>
+                        </button>
+                        <button id="space-btn" class="col-span-1 bg-surface-container/40 hover:bg-surface-container border border-outline-variant/50 hover:border-outline-variant text-on-surface py-2 rounded-lg text-label-sm font-bold transition-all flex flex-col items-center justify-center gap-1 shadow-sm">
+                            <span class="material-symbols-outlined text-[18px]">space_bar</span>
+                            <span class="text-[10px]">Khoảng Trắng</span>
+                        </button>
+                        <button id="clear-btn" class="col-span-1 bg-surface-container/40 hover:bg-surface-container border border-outline-variant/50 hover:border-outline-variant text-error py-2 rounded-lg text-label-sm font-bold transition-all flex flex-col items-center justify-center gap-1 shadow-sm">
+                            <span class="material-symbols-outlined text-[18px]">delete_sweep</span>
+                            <span class="text-[10px]">Xóa Tất Cả</span>
+                        </button>
+                        <button id="reset-btn" class="col-span-1 bg-surface-container/40 hover:bg-surface-container border border-outline-variant/50 hover:border-tertiary text-tertiary py-2 rounded-lg text-label-sm font-bold transition-all flex flex-col items-center justify-center gap-1 shadow-sm">
+                            <span class="material-symbols-outlined text-[18px]">refresh</span>
+                            <span class="text-[10px]">Reset</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="toast-wrapper" class="custom-toast">
+        <span class="material-symbols-outlined">info</span>
+        <span id="toast-message">Thông báo ở đây</span>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
