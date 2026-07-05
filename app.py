@@ -26,6 +26,11 @@ def index():
     # Render giao diện web từ file templates/index.html
     return render_template('index.html')
 
+@app.route('/hdsd')
+def hdsd():
+    # Render trang Hướng Dẫn Sử Dụng từ file templates/HDSD.html
+    return render_template('HDSD.html')
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:

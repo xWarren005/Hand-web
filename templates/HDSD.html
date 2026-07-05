@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Hướng Dẫn Sử Dụng - Nhận Diện Ngôn Ngữ Ký Hiệu Tay</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Cấu hình Tailwind (đã tách ra file js riêng) -->
+    <script src="/static/js/HDSD.js"></script>
+
+    <!-- CSS dùng chung của hệ thống + CSS riêng của trang HDSD -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/HDSD.css">
+</head>
+
+<body
+    class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+
+    <!-- TopAppBar -->
+    <header
+        class="bg-surface border-b border-surface-container-highest sticky top-0 z-50 flex justify-between items-center w-full px-gutter py-3">
+        <div class="flex items-center gap-4">
+            <button
+                class="text-on-surface hover:bg-surface-variant p-2 rounded-full transition-colors flex items-center justify-center">
+                <span class="material-symbols-outlined" data-icon="menu">menu</span>
+            </button>
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-on-primary-container text-sm" data-icon="front_hand"
+                        data-original-icon="front_hand">front_hand</span>
+                </div>
+                <div>
+                    <h1 class="text-[18px] font-bold text-on-surface leading-tight">Nhận Diện Ngôn Ngữ Ký Hiệu Tay</h1>
+                    <p class="text-label-sm text-on-surface-variant hidden sm:block font-normal">Thực hiện các cử chỉ
+                        tay để hiển thị chữ cái</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center gap-2">
+            <button
+                class="text-on-surface-variant hover:bg-surface-container-highest transition-colors p-2 rounded-full active:scale-95 duration-150 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+            </button>
+            <button
+                class="text-on-surface-variant hover:bg-surface-container-highest transition-colors p-2 rounded-full active:scale-95 duration-150 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]" data-icon="help_outline">help_outline</span>
+            </button>
+            <button
+                class="text-on-surface-variant hover:bg-surface-container-highest transition-colors p-2 rounded-full active:scale-95 duration-150 relative flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]"
+                    data-icon="notifications_none">notifications_none</span>
+            </button>
+            <div
+                class="w-8 h-8 rounded-full ml-2 overflow-hidden cursor-pointer hover:ring-2 hover:ring-primary transition-all">
+                <img alt="User avatar" class="w-full h-full object-cover"
+                    data-alt="A detailed portrait of a user avatar with a light-purple ring against a deep dark background, emphasizing a modern tech aesthetic."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_Axm_uXmjjuZ37zL3DIR_Cyj3SYOZTKvPbMITFMMvq3YIxN-jB19OJqzM9AiUOIxZCxIj_YiuZv8uoyjn_xE1Wym7s_zOb5X_azNKH0CC9Q9iS9rQjP95Wx1aJoAQZ-NchVdym0r3N-yYL2heKFE_gXlhOvIvEqKHQsuo4j3KN25VNpIQFEkp3DrYGkokLdc10ZiYu0puIhRNMu-v6T6-nYiiQvbwNpOhokgL03sUAEBvBA_TUM88m2x-nk4iRfvDyNc-BSpt1aY">
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-1 overflow-hidden">
+        <!-- SideNavBar -->
+        <nav
+            class="h-full w-[240px] bg-surface-container-lowest border-r border-surface-container-highest flex flex-col py-4 hidden md:flex shrink-0">
+            <div class="px-4 mb-6 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-primary-container/20 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-primary" data-icon="front_hand">front_hand</span>
+                </div>
+                <div>
+                    <h2 class="text-label-md font-bold text-on-surface">Hệ Thống</h2>
+                    <p class="text-[11px] text-primary mt-0.5">V1.0 Stable</p>
+                </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-1 px-2">
+                <a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-variant/50 rounded-lg transition-all group"
+                    href="/">
+                    <span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors"
+                        data-icon="dashboard">dashboard</span>
+                    <span class="text-label-md font-medium">Bảng Điều Khiển</span>
+                </a>
+                <a class="flex items-center gap-3 px-3 py-2.5 bg-primary/10 text-primary rounded-lg group" href="/hdsd">
+                    <span class="material-symbols-outlined text-[20px]" data-icon="help_center">help_center</span>
+                    <span class="text-label-md font-bold">Hướng Dẫn Sử Dụng</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content Canvas -->
+        <main class="flex-1 overflow-y-auto bg-surface-container-lowest p-6">
+            <div class="max-w-[1440px] mx-auto space-y-6">
+
+                <!-- Hero Section -->
+                <section
+                    class="bg-surface-container rounded-xl border border-surface-container-highest p-8 relative overflow-hidden">
+                    <div class="relative z-10 w-full max-w-6xl mx-auto text-center flex flex-col items-center">
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-on-surface tracking-tight leading-tight mb-6">
+                            Hướng dẫn sử dụng Hệ thống <br class="hidden md:inline">Nhận diện <span class="text-primary whitespace-nowrap">Ngôn ngữ Ký hiệu</span>
+                        </h2>
+                        <p class="text-base sm:text-lg md:text-xl text-on-surface-variant/90 leading-relaxed max-w-5xl">
+                            Hệ thống sử dụng công nghệ thị giác máy tính tiên tiến để theo dõi các điểm mốc trên bàn tay
+                            của bạn trong thời gian thực. Bằng cách so sánh cấu trúc không gian của bàn tay với cơ sở dữ
+                            liệu ký hiệu chuẩn, hệ thống có thể dịch các cử chỉ thành văn bản một cách nhanh chóng và
+                            chính xác. Khám phá hướng dẫn dưới đây để tối ưu hóa trải nghiệm của bạn.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Gesture Reference Gallery -->
+                <section class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-[20px]"
+                            data-icon="library_books">library_books</span>
+                        <h3 class="text-[18px] font-bold text-on-surface">Từ Điển Ký Hiệu</h3>
+                    </div>
+                    <div
+                        class="bg-surface-container rounded-xl border border-surface-container-highest overflow-hidden p-6 relative group">
+                        <img alt="American Sign Language Alphabet and Numbers Reference Chart"
+                            class="w-full h-auto max-h-[500px] object-contain rounded-lg invert mix-blend-screen opacity-90 group-hover:opacity-100 transition-opacity"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8DIX1vETey4Ymj9zxe8ZSlhOvTwIURxF_1VPLeBjuIlp7nYqxZQkMulRZzLs5ky1qnmUVgrQsxAzyF2pBiZc6xbp_2xgbivRDZTS8F-EuCteFD8GqC9r01cvFN-K8SKvBel2h4XmuL1dqDnExru3wzCMPNkY_fjIr_Gx6dMLy0H-XZmeuxMLNX8Bw00_w0lfS8cyS2nce8bPnIyPsd4BtifViy-14OadcBDMoSsFWuZHlFDSB1YzCONG9OOyBcDD69uhAt4cWq7U">
+                        <div
+                            class="absolute bottom-6 right-6 bg-surface-container-highest/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-outline-variant/30 flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[16px] text-tertiary"
+                                data-icon="zoom_in">zoom_in</span>
+                            <span class="text-[11px] font-medium">Hệ thống chuẩn ASL</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3-Step Guide Grid -->
+                <section class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-tertiary text-[20px]" data-icon="route">route</span>
+                        <h3 class="text-[18px] font-bold text-on-surface">Quy Trình 3 Bước</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Step 1 -->
+                        <div
+                            class="bg-surface-container rounded-xl border border-surface-container-highest p-6 hover:bg-surface-container-high transition-colors group">
+                            <div
+                                class="w-10 h-10 rounded-full bg-surface-bright flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span class="text-body-lg font-bold text-primary">1</span>
+                            </div>
+                            <h4 class="text-[16px] font-bold text-on-surface mb-2">Định Vị Bàn Tay</h4>
+                            <p class="text-[13px] text-on-surface-variant leading-relaxed">Đưa bàn tay của bạn vào chính
+                                giữa khung hình camera. Đảm bảo toàn bộ bàn tay nằm gọn trong vùng nhận diện được viền
+                                sáng.</p>
+                            <div
+                                class="mt-6 h-28 rounded-lg bg-surface-container-lowest border border-surface-container-highest flex items-center justify-center relative overflow-hidden">
+                                <div
+                                    class="absolute inset-4 border border-dashed border-primary/50 rounded animate-pulse">
+                                </div>
+                                <span class="material-symbols-outlined text-3xl text-on-surface-variant"
+                                    data-icon="center_focus_strong">center_focus_strong</span>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div
+                            class="bg-surface-container rounded-xl border border-surface-container-highest p-6 hover:bg-surface-container-high transition-colors group">
+                            <div
+                                class="w-10 h-10 rounded-full bg-surface-bright flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span class="text-body-lg font-bold text-primary">2</span>
+                            </div>
+                            <h4 class="text-[16px] font-bold text-on-surface mb-2">Thực Hiện Ký Hiệu</h4>
+                            <p class="text-[13px] text-on-surface-variant leading-relaxed">Thực hiện ký hiệu một cách
+                                dứt khoát. Giữ nguyên tư thế trong khoảng 0.5 giây để hệ thống phân tích và hiển thị
+                                "Chữ cái được nhận diện".</p>
+                            <div
+                                class="mt-6 h-28 rounded-lg bg-surface-container-lowest border border-surface-container-highest flex items-center justify-center relative">
+                                <div class="text-headline-lg font-bold text-tertiary-fixed-dim drop-shadow-md">A</div>
+                                <div
+                                    class="absolute bottom-2 text-[11px] text-primary flex items-center gap-1 font-medium">
+                                    <span class="material-symbols-outlined text-[14px]"
+                                        data-icon="check_circle">check_circle</span> 98%
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div
+                            class="bg-surface-container rounded-xl border border-surface-container-highest p-6 hover:bg-surface-container-high transition-colors group">
+                            <div
+                                class="w-10 h-10 rounded-full bg-surface-bright flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span class="text-body-lg font-bold text-primary">3</span>
+                            </div>
+                            <h4 class="text-[16px] font-bold text-on-surface mb-2">Xác Nhận &amp; Lưu</h4>
+                            <p class="text-[13px] text-on-surface-variant leading-relaxed">Khi chữ cái hiển thị chính
+                                xác, nhấn nút "Xác nhận" hoặc dùng phím tắt (Space) để thêm vào chuỗi câu đang soạn thảo
+                                bên phải.</p>
+                            <div
+                                class="mt-6 h-28 rounded-lg bg-surface-container-lowest border border-surface-container-highest flex flex-col items-center justify-center gap-3">
+                                <div class="text-[13px] font-mono tracking-widest text-on-surface">H E L L _</div>
+                                <button
+                                    class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-[11px] font-bold flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[14px]" data-icon="add">add</span> Thêm
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Accuracy Tips Bento -->
+                <section class="space-y-4 pb-8">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary-fixed text-[20px]"
+                            data-icon="lightbulb">lightbulb</span>
+                        <h3 class="text-[18px] font-bold text-on-surface">Mẹo Tăng Độ Chính Xác</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div
+                            class="bg-surface-container p-5 rounded-xl border border-surface-container-highest flex items-start gap-4">
+                            <div class="p-2 bg-surface-bright rounded-lg shrink-0 text-tertiary">
+                                <span class="material-symbols-outlined text-[20px]"
+                                    data-icon="light_mode">light_mode</span>
+                            </div>
+                            <div>
+                                <h4 class="text-[14px] font-bold text-on-surface mb-1">Ánh Sáng Đủ</h4>
+                                <p class="text-on-surface-variant text-[12px] leading-relaxed">Đảm bảo môi trường đủ
+                                    sáng, tránh ánh sáng ngược hắt trực tiếp vào camera làm tối bàn tay.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-surface-container p-5 rounded-xl border border-surface-container-highest flex items-start gap-4">
+                            <div class="p-2 bg-surface-bright rounded-lg shrink-0 text-primary-fixed">
+                                <span class="material-symbols-outlined text-[20px]"
+                                    data-icon="straighten">straighten</span>
+                            </div>
+                            <div>
+                                <h4 class="text-[14px] font-bold text-on-surface mb-1">Khoảng Cách Phù Hợp</h4>
+                                <p class="text-on-surface-variant text-[12px] leading-relaxed">Giữ khoảng cách từ
+                                    40-70cm so với camera. Quá gần hoặc quá xa đều giảm độ chính xác.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-surface-container p-5 rounded-xl border border-surface-container-highest flex items-start gap-4">
+                            <div class="p-2 bg-surface-bright rounded-lg shrink-0 text-secondary-fixed">
+                                <span class="material-symbols-outlined text-[20px]"
+                                    data-icon="background_replace">background_replace</span>
+                            </div>
+                            <div>
+                                <h4 class="text-[14px] font-bold text-on-surface mb-1">Nền Phía Sau Đơn Giản</h4>
+                                <p class="text-on-surface-variant text-[12px] leading-relaxed">Tránh vùng nền quá phức tạp hoặc có nhiều chi tiết chuyển động để camera theo dõi tốt nhất.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
